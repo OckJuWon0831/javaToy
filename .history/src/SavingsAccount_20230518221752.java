@@ -1,0 +1,49 @@
+public class SavingsAccount extends Account{
+  private String accountNumber;
+  private String name;
+  private int balance;
+  private String date;
+
+  public SavingsAccount(String accountNumber, String name, int balance, String date) {
+    this.accountNumber = accountNumber;
+    this.name = name;
+    this.balance = balance;
+  }
+
+  public int getBalance() {
+    return balance;
+  }
+
+  public void deposit(int deposit) {
+    if (deposit <= 0) {
+      System.out.println("입금 금액은 0보다 커야합니다");
+      return;
+    }
+    
+    balance += deposit;
+  }
+
+  public void withdraw(int withdraw) {
+    if (withdraw > balance) {
+      System.out.println("잔액이 부족합니다");
+      return;
+    }
+    if (withdraw <= 0) {
+      System.out.println("출금 금액은 0보다 커야합니다");
+      return;
+    }
+    if (withdraw > NORMAL_ACCOUNT_MAXIMUM_BALANCE)  {
+      System.out.println("일반계좌는 최대 1000만원까지 출금이 가능합니다.");
+      return;
+    }
+    balance -= withdraw;
+    System.out.println("금액 :" +withdraw+" 가 출금되었습니다");
+  }
+  public String getAccountNumber() {
+    return accountNumber;
+  }
+
+  public String getAccountInfo() {
+      return "계좌종류: 적금계좌, 계좌번호 :"+accountNumber+", 예금주명: " +name+ ", 잔고: "+balance;
+  }
+}
