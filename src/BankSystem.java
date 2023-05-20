@@ -63,7 +63,7 @@ public class BankSystem {
             System.out.println("항목을 선택하세요");
             System.out.println("========================");
             Scanner scan = new Scanner(System.in);
-            int selector = Integer.parseInt(scan.nextLine());
+            int selector = scan.nextInt();
             switch(selector) {
                 case 1:
                     System.out.println("계좌개설 칸이 선택되었습니다.");
@@ -74,7 +74,7 @@ public class BankSystem {
                     System.out.println("3. 적금");
                     System.out.println("========================");
                     Scanner accountOpenScanner = new Scanner(System.in);
-                    int accountOpenSelector = Integer.parseInt(accountOpenScanner.nextLine());
+                    int accountOpenSelector = accountOpenScanner.nextInt();
                     switch(accountOpenSelector) {
                         case 1:
                             createNormalAccount();
@@ -95,7 +95,7 @@ public class BankSystem {
                         if(accountList.get(i).getAccountNumber().equals(accountNumberToFind)) {
                             System.out.println("========================");
                             System.out.println("입금 금액을 입력해주세요.");
-                            int moneyToDeposit = Integer.parseInt(new Scanner(System.in).nextLine());
+                            int moneyToDeposit = new Scanner(System.in).nextInt();
                             System.out.println("========================");
                             accountList.get(i).deposit(moneyToDeposit);
                             System.out.println("입금이 성공적으로 됐습니다");
@@ -111,12 +111,12 @@ public class BankSystem {
                 case 3:
                     System.out.println("출금 칸이 선택되었습니다.");
                     System.out.println("계좌번호를 입력해주세요.");
-                    String accountNumberToFind2 = new Scanner(System.in).nextLine();
+                    String accountNumberToFind2 = new Scanner(System.in).nextLine(); 
                     for(int i = 0; i <accountList.size(); i++) {
                         if(accountList.get(i).getAccountNumber().equals(accountNumberToFind2)) {
                             System.out.println("========================");
                             System.out.println("출금 금액을 입력해주세요.");
-                            int moneyToWithdraw = Integer.parseInt(new Scanner(System.in).nextLine());
+                            int moneyToWithdraw = new Scanner(System.in).nextInt();
                             System.out.println("========================");
                             accountList.get(i).withdraw(moneyToWithdraw);
                             System.out.println("업데이트된 계좌 정보:");
