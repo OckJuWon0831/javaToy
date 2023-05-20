@@ -34,9 +34,6 @@ public class SavingsAccount extends Account{
       balance -= withdraw;
       System.out.println("금액 :" +withdraw+" 가 출금되었습니다");
     }
-    else {
-      System.out.println("적금 만기일이 아닙니다.");
-    }
   }
   public String getAccountInfo() {
       return "계좌종류: 적금계좌, 계좌번호 :"+accountNumber+", 예금주명: " +name+ ", 잔고: "+balance+ ", 만기일: " +TARGET_DATE;

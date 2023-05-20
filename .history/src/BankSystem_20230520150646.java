@@ -1,4 +1,3 @@
-import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.Scanner;
 
@@ -36,16 +35,13 @@ public class BankSystem {
         System.out.println("이름: ");
         String name = sc.nextLine();
         System.out.println("적금 만기일(연도): ");
-        int expireYear = sc.nextInt(); 
+        String expireDate = sc.nextLine(); 
         System.out.println("적금 만기일(월): ");
-        int expireMonth = sc.nextInt(); 
         System.out.println("적금 만기일(일): ");
-        int expireDate = sc.nextInt(); 
         System.out.println("금액: ");
         int balance = sc.nextInt();
 
-        LocalDate targetDate = LocalDate.of(expireYear, expireMonth, expireDate);
-        accountList.add(index, new SavingsAccount(accountNumber, name, balance, targetDate));
+        accountList.add(index, new SavingsAccount(accountNumber, name, balance, expireDate));
         index++;
     }
     public static void main(String[] args) {

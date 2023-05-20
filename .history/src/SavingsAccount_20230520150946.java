@@ -4,8 +4,8 @@ public class SavingsAccount extends Account{
   private String accountNumber;
   private String name;
   private int balance;
-  private LocalDate TARGET_DATE;
-  private LocalDate CURRENT_DATE = LocalDate.now();
+  LocalDate TARGET_DATE;
+  LocalDate CURRENT_DATE = LocalDate.now();
 
   public SavingsAccount(String accountNumber, String name, int balance, LocalDate targetDate) {
     super(accountNumber, name, balance);
@@ -33,9 +33,6 @@ public class SavingsAccount extends Account{
     if (CURRENT_DATE.equals(TARGET_DATE)) {
       balance -= withdraw;
       System.out.println("금액 :" +withdraw+" 가 출금되었습니다");
-    }
-    else {
-      System.out.println("적금 만기일이 아닙니다.");
     }
   }
   public String getAccountInfo() {

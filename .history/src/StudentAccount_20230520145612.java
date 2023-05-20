@@ -17,6 +17,7 @@ public class StudentAccount extends Account{
     }
     balance += balance;
   }
+
   public void withdraw(int withdraw) {
     if (withdraw > balance) {
       System.out.println("잔액이 부족합니다");
