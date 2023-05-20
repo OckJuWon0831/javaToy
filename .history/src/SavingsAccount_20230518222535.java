@@ -1,3 +1,5 @@
+import java.time.LocalDate;
+
 public class SavingsAccount extends Account{
   private String accountNumber;
   private String name;
@@ -6,11 +8,11 @@ public class SavingsAccount extends Account{
 
   private final String DEPOSIT_EXPIRED_DATE = "1999"; // date 객체 쓸것
 
-  public SavingsAccount(String accountNumber, String name, int balance, String expireDate) {
+  public SavingsAccount(String accountNumber, String name, int balance, LocalDate targetDate) {
     this.accountNumber = accountNumber;
     this.name = name;
     this.balance = balance;
-    this.expireDate = expireDate;
+    this.expireDate = targetDate;
   }
 
   public int getBalance() {

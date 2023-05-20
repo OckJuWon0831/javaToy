@@ -1,5 +1,4 @@
 public abstract class Account {
-
   private String accountNumber;
   private String name;
   private int balance;
